@@ -33,7 +33,7 @@ model = TwoLayerNet(D_in, H, D_out)  # 初始化神经网络模型
 # Construct our loss function and an Optimizer. The call to model.parameters()\n",
 # in the SGD constructor will contain the learnable parameters of the two\n",
 # nn.Linear modules which are members of the model.\n",
-criterion = torch.nn.MSELoss(reduction='sum')  # 定义最小化损失方差函数
+criterion = torch.nn.MSELoss(reduction='sum')  # 定义最小化损失方差函数loss_fn
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-4)  # 初始化优化器
 loss_be = 100000000
 while True:  # 梯度下降500次，也可以设置成损失小到一定程度即停止训练
