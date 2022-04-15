@@ -103,5 +103,5 @@ with torch.no_grad():
 predictions = zip(range(1, 101), testY.max(1)[1].data.tolist())
 print([fizz_buzz_decode(i, x) for (i, x) in predictions])
 testY = testY.cpu()
-print(testY)
-print(np.sum(testY.numpy().max(1)[1] == np.array([fizz_buzz_encode(i) for i in range(1, 101)])))
+# print(testY)
+print(np.sum(testY.max(1)[1].numpy() == np.array([fizz_buzz_encode(i) for i in range(1, 101)])))
